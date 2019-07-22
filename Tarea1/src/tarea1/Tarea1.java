@@ -76,19 +76,15 @@ public class Tarea1 {
             anos_totales = a-1700; // los anos menos el actual.
         }
         
-        System.out.println("Son "+ anos_totales +" anos.");
         dias_normales = anos_totales*365; //  los dias sin considerar bisiestos desde 1700 al ano anterior.
-        System.out.println("Son "+ dias_normales +" dias.");
         
         if(anos_totales <4){
             dias_bisiestos = 0;
         }else{
             dias_bisiestos = CalcularDB(a); // los dias bisiestos adicionales de los anos desde 1700 al ano anterior.
-            System.out.println("La Division da: "+(dias_bisiestos));
             if(b==true){
                 dias_bisiestos = dias_bisiestos-1;
             }
-            System.out.println("Son "+ dias_bisiestos +" dias bisiestos.");
         }
         
         dias_totales = dias_normales + dias_bisiestos;
@@ -99,23 +95,16 @@ public class Tarea1 {
         if(m > 1 ){
             for(int r=1;r<(m);r++){
                 if(b == true){
-                    System.out.println("Tengo "+dias+" y le sume: "+abm[r]);
                     dias = dias + abm[r];
                 }else{
-                    System.out.println("Tengo "+dias+" y le sume: "+am[r]);
                     dias = dias + am[r];
                 }
             }
         }
-        
-        System.out.println("Tengo "+dias+" y le sume: "+d);
+       
         dias = dias + d;
         
-        System.out.println("En un total de: "+dias+" dias.");
-        
         int c = dias%7;
-        
-        System.out.println("Quedan "+c);
         
         if(dias < 8 ){
             switch(dias){

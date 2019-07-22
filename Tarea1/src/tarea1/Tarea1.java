@@ -25,7 +25,7 @@ public class Tarea1 {
         am = new int[13];
         b = false;
         
-        am[0] = 365; // Normal Year
+        am[0] = 0; // Normal Year
         am[1] = 31; // Enero
         am[2] = 28; // Febrero Normal
         am[3] = 31; // Marzo
@@ -41,7 +41,7 @@ public class Tarea1 {
         
         abm = new int[13];
         
-        abm[0] = 366; // Normal Year
+        abm[0] = 0; // bisiest Year
         abm[1] = 31; // Enero
         abm[2] = 29; // Febrero Bisiesto
         abm[3] = 31; // Marzo
@@ -70,7 +70,12 @@ public class Tarea1 {
         int dias_bisiestos;
         int dias_totales;
         
-        anos_totales = a-1700-1; // los anos menos el actual.
+        if(a<=1700){
+            anos_totales = 0;
+        }else{
+            anos_totales = a-1700; // los anos menos el actual.
+        }
+        
         System.out.println("Son "+ anos_totales +" anos.");
         dias_normales = anos_totales*365; //  los dias sin considerar bisiestos desde 1700 al ano anterior.
         System.out.println("Son "+ dias_normales +" dias.");
@@ -78,21 +83,21 @@ public class Tarea1 {
         if(anos_totales <4){
             dias_bisiestos = 0;
         }else{
-            dias_bisiestos = anos_totales/4; // los dias bisiestos adicionales de los anos desde 1700 al ano anterior.
+            dias_bisiestos = ((anos_totales)/4); // los dias bisiestos adicionales de los anos desde 1700 al ano anterior.
+            System.out.println("La Division da: "+(dias_bisiestos));
+            if(b==true){
+                dias_bisiestos = dias_bisiestos-1;
+            }
+            System.out.println("Son "+ dias_bisiestos +" dias bisiestos.");
         }
         
         dias_totales = dias_normales + dias_bisiestos;
         
         int dias;
-        
-        if(anos_totales<1){
-            dias = 0;
-        }else{
-            dias = dias_totales;
-        }
+        dias = dias_totales;
         
         if(m > 1 ){
-            for(int r=1;r<(m-1);r++){
+            for(int r=1;r<(m);r++){
                 if(b == true){
                     System.out.println("Tengo "+dias+" y le sume: "+abm[r]);
                     dias = dias + abm[r];
@@ -103,8 +108,14 @@ public class Tarea1 {
             }
         }
         
+        System.out.println("Tengo "+dias+" y le sume: "+d);
         dias = dias + d;
+        
+        System.out.println("En un total de: "+dias+" dias.");
+        
         int c = dias%7;
+        
+        System.out.println("Quedan "+c);
         
         if(dias < 8 ){
             switch(dias){
@@ -187,6 +198,9 @@ public class Tarea1 {
             }else{
                 b = false;
                 System.out.println("Elegiste un ano normal (365 dias).");
+            }
+            if(a==1700){
+                b =false;
             }
         }
     }

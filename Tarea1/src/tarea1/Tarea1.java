@@ -83,7 +83,7 @@ public class Tarea1 {
         if(anos_totales <4){
             dias_bisiestos = 0;
         }else{
-            dias_bisiestos = ((anos_totales)/4); // los dias bisiestos adicionales de los anos desde 1700 al ano anterior.
+            dias_bisiestos = CalcularDB(a); // los dias bisiestos adicionales de los anos desde 1700 al ano anterior.
             System.out.println("La Division da: "+(dias_bisiestos));
             if(b==true){
                 dias_bisiestos = dias_bisiestos-1;
@@ -194,6 +194,12 @@ public class Tarea1 {
         }else{
             if(a % 4 == 0){
                 b = true;
+                if(a%100 == 0){
+                    b=false;
+                    if(a%400==0){
+                       b=true;     
+                    }
+                }
                 System.out.println("Elegiste un ano bisiesto (366 dias).");
             }else{
                 b = false;
@@ -232,5 +238,19 @@ public class Tarea1 {
                 LeerD();
             }
         }
+    }
+    
+    static int CalcularDB(int a){
+        int b=0;
+        for(int e=1700;e<=a;e=e+4){
+            b++;
+            if(e%100 == 0){
+                b=b-1;
+                if(e%400==0){
+                   b++;
+                }
+            }
+        }
+        return b;
     }
 }

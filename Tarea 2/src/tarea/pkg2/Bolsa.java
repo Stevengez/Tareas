@@ -18,7 +18,7 @@ public class Bolsa {
         cantidad_elementos = 0;
     }
     
-    public void poner(Object nuevo_elemento){
+    public Bolsa poner(Object nuevo_elemento){
         Elemento nuevo;
         nuevo = new Elemento(nuevo_elemento);
         if(inicio==null){
@@ -30,6 +30,7 @@ public class Bolsa {
             inicio = nuevo;
             ultimo.setSiguiente(inicio);
         }
+        return this;
     }
     
 }

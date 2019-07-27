@@ -20,6 +20,11 @@ public class Elemento {
         return elemento;
     }
     
+    String getTipoElemento(){
+        System.out.println("Em pidieron el tipo de elemento de: "+elemento.getClass().getTypeName());
+        return elemento.getClass().getTypeName();
+    }
+    
     public void setValor(Object nuevo_valor){
         elemento = nuevo_valor;
     }

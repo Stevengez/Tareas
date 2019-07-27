@@ -21,7 +21,6 @@ public class Elemento {
     }
     
     String getTipoElemento(){
-        System.out.println("Em pidieron el tipo de elemento de: "+elemento.getClass().getTypeName());
         return elemento.getClass().getTypeName();
     }
     

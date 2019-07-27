@@ -19,7 +19,6 @@ public class Tarea2 {
         nueva_bolsa = new Bolsa();
         String cadena="hola";
         System.out.println(cuantos(nueva_bolsa,cadena));
-        
     }
     
     static Boolean esVacia(Bolsa b){
@@ -30,7 +29,7 @@ public class Tarea2 {
         return b.poner(e);
     }
     
-    static int cuantos(Bolsa b, Class tipo){
+    static int cuantos(Bolsa b, Class tipo){   // Metodo que devuelve el numero de elementos del tipo enviado hay en la bolsa.
         Elemento temp; // Elemento temporal para recorrer la lista;
         int contador = 0; // Contador de elementos iguales al tipo elegido
         int sub_contador = 0; // Cuenta los elementos revisados;
@@ -52,7 +51,7 @@ public class Tarea2 {
         return contador;
     }
     
-    static int cuantos(Bolsa b, Object a){
+    static int cuantos(Bolsa b, Object a){ // Metodo que devuelve el numero de elementos del mismo tipo al enviado hay en la bolsa.
         Class tipo = a.getClass();
         Elemento temp; // Elemento temporal para recorrer la lista;
         int contador = 0; // Contador de elementos iguales al tipo elegido
